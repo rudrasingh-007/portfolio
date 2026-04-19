@@ -951,7 +951,7 @@
     }
 
     .mc:nth-child(2)::after {
-      background: var(--green);
+      background: var(--amber);
     }
 
     .mc:nth-child(3)::after {
