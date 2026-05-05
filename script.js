@@ -59,6 +59,14 @@ if (burger && navLinksEl) {
   burger.addEventListener('click', () => navLinksEl.classList.toggle('open'));
 }
 
+navLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    if (navLinksEl) {
+      navLinksEl.classList.remove('open');
+    }
+  });
+});
+
 /* TERMINAL TYPING EFFECT */
 const terminalLines = [
   "CS undergrad. Building at the intersection of security and AI.",
@@ -71,6 +79,16 @@ const terminalElement = document.getElementById('terminal-text');
 function typeTerminal() {
   if (!terminalElement) return;
 
+  if (currentLineIndex >= terminalLines.length) {
+    setTimeout(() => {
+      terminalElement.textContent = '';
+      currentLineIndex = 0;
+      currentCharIndex = 0;
+      typeTerminal();
+    }, 1500);
+    return;
+  }
+
   if (currentLineIndex < terminalLines.length) {
     if (currentCharIndex < terminalLines[currentLineIndex].length) {
       terminalElement.textContent += terminalLines[currentLineIndex].charAt(currentCharIndex);
@@ -80,7 +98,16 @@ function typeTerminal() {
       terminalElement.appendChild(document.createElement('br'));
       currentLineIndex++;
       currentCharIndex = 0;
-      setTimeout(typeTerminal, 350);
+      if (currentLineIndex >= terminalLines.length) {
+        setTimeout(() => {
+          terminalElement.textContent = '';
+          currentLineIndex = 0;
+          currentCharIndex = 0;
+          typeTerminal();
+        }, 1500);
+      } else {
+        setTimeout(typeTerminal, 350);
+      }
     }
   }
 }
