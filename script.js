@@ -52,10 +52,17 @@ window.addEventListener('scroll', () => {
 
 updateNavState();
 
+/* NAVBURGER TOGGLE */
+const burger = document.getElementById('navBurger');
+const navLinksEl = document.querySelector('.nav-links');
+if (burger && navLinksEl) {
+  burger.addEventListener('click', () => navLinksEl.classList.toggle('open'));
+}
+
 /* TERMINAL TYPING EFFECT */
 const terminalLines = [
-  "Transforming complex requirements into elegant, fast,",
-  "and future-proof web applications with cutting-edge tech."
+  "CS undergrad. Building at the intersection of security and AI.",
+  "Triage, threat hunting, privacy auditing — automated."
 ];
 let currentLineIndex = 0;
 let currentCharIndex = 0;

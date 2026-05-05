@@ -11,7 +11,8 @@
       --ink-faint: #9ca3af;
       --ink-ghost: rgba(255, 255, 255, 0.05);
       --charcoal: #36454F;
-
+      --charcoal: #111111;
+      
       /* Accent Colors */
       --amber: #FF5F1F;
       /* Neon Orange */
@@ -147,6 +148,24 @@
       font-size: 0.72rem;
       font-weight: 600;
       color: var(--ink-faint);
+    }
+
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink-dim);
+      transition: all 0.3s;
     }
 
     .ndot {
@@ -293,7 +312,11 @@
        HERO — centered, massive type
     ============================================================ */
     #hero {
-      background: var(--white);
+      background: 
+        linear-gradient(rgba(255,95,31,0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,95,31,0.12) 1px, transparent 1px),
+        #000000;
+      background-size: 60px 60px, 60px 60px, auto;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -323,6 +346,15 @@
       z-index: 1;
     }
 
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,95,31,0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
     .hero-tagline {
       font-size: clamp(1rem, 1.6vw, 1.25rem);
       font-weight: 500;
@@ -342,7 +374,7 @@
       font-weight: 900;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #000000;
+      color: var(--ink);
       margin-bottom: 1.5rem;
     }
 
@@ -528,7 +560,7 @@
     }
 
     .about-h em {
-      color: #000000;
+      color: var(--ink);
       font-style: normal;
       font-weight: 900;
     }
@@ -575,7 +607,7 @@
       font-family: var(--display);
       font-size: 2rem;
       font-weight: 800;
-      color: #000000;
+      color: var(--amber);
       letter-spacing: -0.03em;
       line-height: 1;
       margin-bottom: 0.3rem;
@@ -990,8 +1022,9 @@
 
     .intel-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      align-items: start;
     }
 
     .ars-grid {
@@ -1302,9 +1335,21 @@
         grid-template-columns: 1fr 1fr;
       }
 
+      .nav-burger { display: flex; }
       .nav-links {
         display: none;
+        position: fixed;
+        top: 60px; left: 0; right: 0;
+        background: rgba(0,0,0,0.97);
+        backdrop-filter: blur(24px);
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 2.5rem 0;
+        border-bottom: 1px solid var(--border);
+        z-index: 499;
       }
+      .nav-links.open { display: flex; }
     }
 
     @media(max-width:420px) {

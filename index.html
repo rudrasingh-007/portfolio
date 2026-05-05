@@ -26,6 +26,9 @@
         <li><a href="#intel">Intel</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
       <div class="nav-status">
         <div class="ndot"></div>Available
       </div>
@@ -80,7 +83,7 @@
             <div class="about-mission rv d1">
               Exploring Cybersecurity · Solving Algorithms · Building with AI
             </div>
-            <h2 class="about-h rv d1">At the intersection of <span style="color: #000;">code</span> and<br><span style="color: #000;">security</span></h2>
+            <h2 class="about-h rv d1">At the intersection of <span style="color: var(--amber);">code</span> and<br><span style="color: var(--amber);">security</span></h2>
             <p class="about-p rv d2">A third-year B.Tech Computer Science student with a clear mission: mastering algorithms by day and exploring cybersecurity by night. What began as curiosity about how systems are exploited quickly evolved into a deep commitment to understanding and securing them.</p>
             <p class="about-p rv d3">Operating within a Kali Linux environment, I continuously sharpen my skills in both problem-solving and offensive security.</p>
             <p class="about-p rv d4">Leveraging modern AI tools, I focus on building and real-world projects efficiently.</p>
@@ -128,7 +131,7 @@
             </div>
             <div class="drow">
               <div class="dk">AI Tools</div>
-              <div class="dv">Cursor, Copilot, Antigravity, Claude Code</div>
+              <div class="dv">Cursor, Copilot, Claude</div>
             </div>
             <div class="drow">
               <div class="dk">Goal</div>
@@ -208,50 +211,41 @@
         <div class="mlist rv">
           <div class="mc">
             <div>
-              <div class="mc-top"><span class="mc-n">MISSION 01</span><span class="mc-badge local">Local Port</span>
-              </div>
-              <div class="mc-title">Threat Hunting Graph</div>
-              <p class="mc-desc">A graph-based threat intelligence tool for visualizing attack patterns, relationships
-                between indicators of compromise, and network anomalies. Built for proactive threat hunting workflows.
-              </p>
-              <div class="mc-tags"><span class="mc-tag">Python</span><span class="mc-tag">Graph Theory</span><span
-                  class="mc-tag">Threat Intelligence</span><span class="mc-tag">Network Analysis</span></div>
+              <div class="mc-top"><span class="mc-n">MISSION 01</span><span class="mc-badge live">Public</span></div>
+              <div class="mc-title">Aegis-SOC</div>
+              <p class="mc-desc">End-to-end L1/L2 SOC triage platform. Dual-source threat intel reclassification, kill-chain sequence detection, persistent anomaly baseline, real log ingestion. 43 tests passing.</p>
+              <div class="mc-tags"><span class="mc-tag">Python</span><span class="mc-tag">FastAPI</span><span class="mc-tag">SQLite</span><span class="mc-tag">Threat Intel</span></div>
             </div>
             <div class="mc-links">
-              <!-- UPDATE: your GitHub link -->
-              <a href="https://github.com" class="mc-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
+              <a href="https://github.com/rudrasingh-007/Aegis-SOC" class="mc-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
               <span class="mc-link off">Live Demo</span>
             </div>
           </div>
+
           <div class="mc">
             <div>
-              <div class="mc-top"><span class="mc-n">MISSION 02</span><span class="mc-badge local">Local Port</span></div>
-              <div class="mc-title">AI Carbon Footprint Tracker</div>
-              <p class="mc-desc">An AI-powered web application tracking and visualizing personal carbon footprints.
-                Delivers intelligent recommendations to reduce environmental impact. Firebase backend, deployed on
-                Vercel.</p>
-              <div class="mc-tags"><span class="mc-tag">AI / ML</span><span class="mc-tag">Firebase</span><span
-                  class="mc-tag">Vercel</span><span class="mc-tag">JavaScript</span></div>
+              <div class="mc-top"><span class="mc-n">MISSION 02</span><span class="mc-badge live">Public</span></div>
+              <div class="mc-title">ThreatLens</div>
+              <p class="mc-desc">Graph-based threat visualization platform. APT kill chains mapped in Neo4j, explored in React, assessed by Gemini AI. See the attack, not the logs.</p>
+              <div class="mc-tags"><span class="mc-tag">Python</span><span class="mc-tag">Neo4j</span><span class="mc-tag">React</span><span class="mc-tag">Gemini AI</span></div>
             </div>
             <div class="mc-links">
-              <!-- UPDATE: your actual links -->
-              <a href="https://github.com" class="mc-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
+              <a href="https://github.com/rudrasingh-007/ThreatLens" class="mc-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
               <span class="mc-link off">Live Demo</span>
             </div>
           </div>
-          <div class="mc cls">
-            <div class="cls-overlay">
-              <div class="cls-stamp">Coming Soon</div>
-            </div>
+
+          <div class="mc">
             <div>
-              <div class="mc-top"><span class="mc-n">MISSION 03</span><span class="mc-badge soon">In Progress</span>
-              </div>
-              <div class="mc-title">Project Redacted Alpha</div>
-              <p class="mc-desc">Details classified. Intel declassified upon completion. Involves advanced cybersecurity
-                tooling and threat detection systems.</p>
-              <div class="mc-tags"><span class="mc-tag">???</span><span class="mc-tag">???</span></div>
+              <div class="mc-top"><span class="mc-n">MISSION 03</span><span class="mc-badge live">Public</span></div>
+              <div class="mc-title">Spectra</div>
+              <p class="mc-desc">LLM privacy auditing toolkit. Three attack vectors — PII generation risk, regurgitation detection, membership inference — with weighted scoring and HTML audit reports.</p>
+              <div class="mc-tags"><span class="mc-tag">Python</span><span class="mc-tag">Flask</span><span class="mc-tag">Presidio</span><span class="mc-tag">LLM Security</span></div>
             </div>
-            <div class="mc-links"><span class="mc-link off">Classified</span></div>
+            <div class="mc-links">
+              <a href="https://github.com/rudrasingh-007/Spectra" class="mc-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
+              <span class="mc-link off">Live Demo</span>
+            </div>
           </div>
         </div>
       </div>
@@ -323,7 +317,7 @@
     </section>
 
     <footer>
-      <span><strong>Rudra Pratap Singh</strong> — 2025</span>
+      <span><strong>Rudra Pratap Singh</strong> — 2025 — 2026</span>
       <span>Built with <span class="brand-accent">intent</span>. Pure HTML.</span>
       <span>Status: <strong>Online</strong></span>
     </footer>
