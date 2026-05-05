@@ -1,51 +1,3 @@
-/* BOOT — percentage counter */
-const boot = document.getElementById('boot');
-const main = document.getElementById('main');
-const bpf = document.getElementById('bpf');
-const bpct = document.getElementById('bpct');
-const bskip = document.getElementById('bskip');
-let hasLaunched = false;
-
-function launch() {
-  if (hasLaunched || !boot || !main) return;
-  hasLaunched = true;
-  boot.classList.add('gone');
-  setTimeout(() => boot.style.display = 'none', 850);
-  main.classList.add('show');
-  // Trigger the typing effect after boot transition completes.
-  setTimeout(typeTerminal, 1000);
-}
-
-if (bpf) {
-  setTimeout(() => {
-    bpf.style.width = '100%';
-  }, 80);
-}
-
-/* Count percentage */
-let pct = 0;
-const pctTimer = setInterval(() => {
-  if (!bpct) {
-    clearInterval(pctTimer);
-    launch();
-    return;
-  }
-
-  pct = Math.min(pct + 1, 100);
-  bpct.textContent = pct + '%';
-  if (pct >= 100) {
-    clearInterval(pctTimer);
-    setTimeout(launch, 300);
-  }
-}, 54);
-
-if (bskip) {
-  bskip.addEventListener('click', () => {
-    clearInterval(pctTimer);
-    launch();
-  });
-}
-
 /* SCROLL REVEAL */
 const io = new IntersectionObserver(entries => {
   entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), i * 80); io.unobserve(e.target); } });
@@ -125,3 +77,5 @@ function typeTerminal() {
     }
   }
 }
+
+typeTerminal();
