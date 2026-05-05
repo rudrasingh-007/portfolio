@@ -69,7 +69,7 @@ navLinks.forEach((link) => {
 
 /* TERMINAL TYPING EFFECT */
 const terminalLines = [
-  "CS undergrad. Building at the intersection of security and AI.",
+  "Breaking systems to understand them. Securing them to protect them.",
   "Triage, threat hunting, privacy auditing — automated."
 ];
 let currentLineIndex = 0;
