@@ -15,8 +15,15 @@ const cio = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
     const el = e.target, target = +el.dataset.count;
-    let n = 0; const inc = target / 75;
-    const t = setInterval(() => { n = Math.min(n + inc, target); el.textContent = Math.round(n) + '×'; if (n >= target) clearInterval(t); }, 16);
+    const suffix = target === 100 ? '%' : '×';
+    let n = 0;
+    el.textContent = '';
+    const inc = target / 75;
+    const t = setInterval(() => {
+      n = Math.min(n + inc, target);
+      el.textContent = `${Math.round(n)}${suffix}`;
+      if (n >= target) clearInterval(t);
+    }, 16);
     cio.unobserve(el);
   });
 }, { threshold: 0.5 });
