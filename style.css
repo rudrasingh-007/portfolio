@@ -1897,6 +1897,13 @@ body {
   font-weight: 700;
 }
 
+.mc-achievement {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--amber);
+  margin: 0.5rem 0 0.8rem 0;
+}
+
 .cwo-strip {
   background: var(--off);
   border-top: 1px solid var(--border);
