@@ -95,12 +95,6 @@ function typeTerminal() {
   if (!terminalElement) return;
 
   if (currentLineIndex >= terminalLines.length) {
-    setTimeout(() => {
-      terminalElement.textContent = '';
-      currentLineIndex = 0;
-      currentCharIndex = 0;
-      typeTerminal();
-    }, 1500);
     return;
   }
 
@@ -113,14 +107,7 @@ function typeTerminal() {
       terminalElement.appendChild(document.createElement('br'));
       currentLineIndex++;
       currentCharIndex = 0;
-      if (currentLineIndex >= terminalLines.length) {
-        setTimeout(() => {
-          terminalElement.textContent = '';
-          currentLineIndex = 0;
-          currentCharIndex = 0;
-          typeTerminal();
-        }, 1500);
-      } else {
+      if (currentLineIndex < terminalLines.length) {
         setTimeout(typeTerminal, 350);
       }
     }
